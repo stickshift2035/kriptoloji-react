@@ -43,7 +43,7 @@ const SignIn = ({ setLoginCheck, loginCheck }) => {
   };
 
   return (
-    loginCheck === true ? <Loading/> :
+    loginCheck === false ? <Loading/> :
     <div className="ui form">
       <div className="field">
         <label>User Name</label>

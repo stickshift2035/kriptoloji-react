@@ -10,7 +10,7 @@ function App() {
   const [loginCheck, setLoginCheck] = useState(false);
 
   return (
-    <Router>
+    <Router basename="/kriptoloji-react">
     <div className="main-wrapper">
       <header></header>
       <div className="ui raised very padded text container segment">
