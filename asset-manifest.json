@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/kriptoloji-react/static/css/main.3d10672c.css",
-    "main.js": "/kriptoloji-react/static/js/main.e61cf11d.js",
+    "main.js": "/kriptoloji-react/static/js/main.0ecf0fe5.js",
     "index.html": "/kriptoloji-react/index.html",
     "main.3d10672c.css.map": "/kriptoloji-react/static/css/main.3d10672c.css.map",
-    "main.e61cf11d.js.map": "/kriptoloji-react/static/js/main.e61cf11d.js.map"
+    "main.0ecf0fe5.js.map": "/kriptoloji-react/static/js/main.0ecf0fe5.js.map"
   },
   "entrypoints": [
     "static/css/main.3d10672c.css",
-    "static/js/main.e61cf11d.js"
+    "static/js/main.0ecf0fe5.js"
   ]
 }
