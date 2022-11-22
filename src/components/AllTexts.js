@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { api } from "../api";
+import Loading from "./Loading";
 
 const AllTexts = () => {
   const [plainTexts, setPlainTexts] = useState();
   const [cipherTexts, setCipherTexts] = useState();
+  const [loading, setLoading] = useState(false);
 
   //   useEffect(() => {
   //     api()
@@ -19,9 +21,11 @@ const AllTexts = () => {
 
   const getAllTexts = (event) => {
     event.preventDefault();
+    setLoading(true);
     api()
       .get("/text/getalltexts")
       .then((response) => {
+        setLoading(false)
         setCipherTexts(response.data.cipherTexts);
         setPlainTexts(response.data.plainTexts);
       })
@@ -30,6 +34,7 @@ const AllTexts = () => {
       });
   };
   return (
+    loading ? <Loading/> :
     <React.Fragment>
       <button className="ui black button" onClick={getAllTexts}>
         Bütün kayıtları göster

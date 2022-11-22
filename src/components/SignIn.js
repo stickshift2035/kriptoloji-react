@@ -11,11 +11,11 @@ const USER_INFO = {
   password: "",
 };
 
-const SignIn = ({ setLoginCheck, loginCheck }) => {
+const SignIn = ({ setLoginCheck}) => {
   let navigate = useNavigate();
 
   const [userInfo, setUserInfo] = useState(USER_INFO);
-  const [validation, setValidation] = useState({ name: "", password: "" });
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (event) => {
     setUserInfo({ ...userInfo, [event.target.name]: event.target.value });
@@ -23,11 +23,12 @@ const SignIn = ({ setLoginCheck, loginCheck }) => {
 
   const onFormSubmit = (event) => {
     event.preventDefault();
-
+    setLoading(true)
     api()
       .post("/auth/login", userInfo)
       .then((response) => {
         if (response.data.success) {
+          setLoading(false)
           setLoginCheck(true);
           navigate("/text");
           toast("Giriş Başarılı");
@@ -43,7 +44,7 @@ const SignIn = ({ setLoginCheck, loginCheck }) => {
   };
 
   return (
-    loginCheck === false ? <Loading/> :
+    loading ? <Loading/> :
     <div className="ui form">
       <div className="field">
         <label>User Name</label>

@@ -15,7 +15,7 @@ function App() {
       <header></header>
       <div className="ui raised very padded text container segment">
         <Routes>
-          <Route path="/" element={<SignIn setLoginCheck={setLoginCheck} loginCheck={loginCheck}/>}></Route>
+          <Route path="/" element={<SignIn setLoginCheck={setLoginCheck}/>}></Route>
           <Route path="/text" element={<Text loginCheck={loginCheck}/>}></Route>
         </Routes>
       </div>
