@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import SignIn from "./components/SignIn";
+import Text from "./components/Text";
+import { ToastContainer } from "react-toastify";
 
 function App() {
+  
+  const [loginCheck, setLoginCheck] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Router>
+    <div className="main-wrapper">
+      <header></header>
+      <div className="ui raised very padded text container segment">
+        <Routes basename="/">
+          <Route path="/" element={<SignIn setLoginCheck={setLoginCheck} loginCheck={loginCheck}/>}></Route>
+          <Route path="/text" element={<Text loginCheck={loginCheck}/>}></Route>
+        </Routes>
+      </div>
     </div>
+    <ToastContainer />
+  </Router>
   );
 }
 
