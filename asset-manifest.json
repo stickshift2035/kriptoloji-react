@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/kriptoloji-react/static/css/main.3d10672c.css",
+    "main.js": "/kriptoloji-react/static/js/main.9c673709.js",
+    "index.html": "/kriptoloji-react/index.html",
+    "main.3d10672c.css.map": "/kriptoloji-react/static/css/main.3d10672c.css.map",
+    "main.9c673709.js.map": "/kriptoloji-react/static/js/main.9c673709.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3d10672c.css",
+    "static/js/main.9c673709.js"
+  ]
+}
