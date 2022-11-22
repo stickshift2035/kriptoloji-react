@@ -10,11 +10,11 @@ function App() {
   const [loginCheck, setLoginCheck] = useState(false);
 
   return (
-    <Router basename="/kriptoloji-react">
+    <Router>
     <div className="main-wrapper">
       <header></header>
       <div className="ui raised very padded text container segment">
-        <Routes basename="/kriptoloji-react">
+        <Routes>
           <Route path="/" element={<SignIn setLoginCheck={setLoginCheck} loginCheck={loginCheck}/>}></Route>
           <Route path="/text" element={<Text loginCheck={loginCheck}/>}></Route>
         </Routes>
