@@ -33,6 +33,7 @@ const SignIn = ({ setLoginCheck}) => {
           navigate("/text");
           toast("Giriş Başarılı");
         } else {
+          setLoading(false)
           setLoginCheck(false);
           console.log(response.data.message);
           toast(response.data.message);

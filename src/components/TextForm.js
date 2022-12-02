@@ -6,7 +6,7 @@ import AllTexts from "./AllTexts";
 import Loading from "./Loading";
 
 const TextForm = () => {
-  const [plainText, setPlainText] = useState({ content: "", keyId: "" });
+  const [plainText, setPlainText] = useState({ content: "", keyId: "0" });
   const [text, setText] = useState("");
   const [error, setError] = useState("");
 
@@ -19,8 +19,9 @@ const TextForm = () => {
       api()
         .post("/text/recordtext", plainText)
         .then((response) => {
+          console.log(plainText);
           console.log(response);
-          setPlainText({ content: "" });
+          setPlainText({ ...plainText, content: "" });
           toast("Yazı Başarıyla Kaydedildi");
         })
         .catch((error) => {

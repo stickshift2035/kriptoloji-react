@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import AllTexts from "./AllTexts";
+import ImageUpload from "./ImageUpload";
 import TextForm from "./TextForm";
 
 const Text = ({ loginCheck }) => {
@@ -9,7 +10,7 @@ const Text = ({ loginCheck }) => {
       {loginCheck ? (
         <React.Fragment>
           <TextForm/>
-          
+          <ImageUpload/>
         </React.Fragment>
       ) : (
         <>
