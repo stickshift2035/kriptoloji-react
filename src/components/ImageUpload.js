@@ -23,10 +23,27 @@ const ImageUpload = () => {
   };
   return (
     <div>
-      <input type="file" name="file" onChange={handleImage} />
-      <button onClick={handleApi}>Submit</button>
+      <input type="file" className="" name="file" onChange={handleImage}/>
       <div>
-        <img style={{height: "144px", width: "192px"}}src="https://kriptoloji-api-ege.onrender.com/uploads/profile_image.jpeg"/>
+        <img
+          style={{
+            height: "144px",
+            width: "auto",
+            padding: "15px",
+            borderRadius: "50%",
+          }}
+          src="https://kriptoloji-api-ege.onrender.com/uploads/profile_image.jpeg"
+          alt="profile_image"
+        />
+      </div>
+      <div>
+        <button onClick={handleApi} className="ui animated button">
+          <div className="visible content">Yükle</div>
+          <div className="hidden content">
+            <i aria-hidden="true" className="arrow right icon"></i>
+          </div>
+        </button>
+        
       </div>
     </div>
   );

@@ -9,8 +9,8 @@ const Text = ({ loginCheck }) => {
     <React.Fragment>
       {loginCheck ? (
         <React.Fragment>
-          <TextForm/>
           <ImageUpload/>
+          <TextForm/>
         </React.Fragment>
       ) : (
         <>
