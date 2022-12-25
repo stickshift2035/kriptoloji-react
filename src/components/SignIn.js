@@ -43,19 +43,13 @@ const SignIn = ({ setLoginCheck }) => {
       .post("/auth/login", userInfo)
       .then((response) => {
         if (response.data.success) {
-          axios
-            .post("http://localhost:5000/auth/sign")
-            .then((res) => {
-              setNonce(res.data.hashDigest);
-              setModalOpen(true);
-              setLoading(false);
-              alert(res.data.hashDigest);
-            })
-            .catch((err) => console.error(err));
+          setLoading(false);
+          setLoginCheck(true);
+          navigate("/text")
+          toast("Giriş Başarılı")
         } else {
           setLoading(false);
           setLoginCheck(false);
-
           console.log(response.data.message);
           toast(response.data.message);
         }
@@ -65,24 +59,24 @@ const SignIn = ({ setLoginCheck }) => {
       });
   };
 
-  const onFormSubmitt = async (event) => {
-    event.preventDefault();
-    setLoading(true);
-    let response = await api().post("/auth/login", userInfo);
-    if (response.data.success) {
-      let res = await axios.post("http://localhost:5000/auth/sign");
-      setNonce(res.data.hashDigest);
-      alert(res.data.hashDigest);
-      setModalOpen(true);
-      setLoading(false);
-    } else {
-      setLoading(false);
-      setLoginCheck(false);
+  // const onFormSubmitt = async (event) => {
+  //   event.preventDefault();
+  //   setLoading(true);
+  //   let response = await api().post("/auth/login", userInfo);
+  //   if (response.data.success) {
+  //     let res = await api().post("/auth/sign",{});
+  //     setNonce(res.data.hashDigest);
+  //     alert(res.data.hashDigest);
+  //     setModalOpen(true);
+  //     setLoading(false);
+  //   } else {
+  //     setLoading(false);
+  //     setLoginCheck(false);
 
-      console.log(response.data.message);
-      toast(response.data.message);
-    }
-  };
+  //     console.log(response.data.message);
+  //     toast(response.data.message);
+  //   }
+  // };
 
   return loading ? (
     <>
@@ -124,7 +118,7 @@ const SignIn = ({ setLoginCheck }) => {
             <label>I agree to the Terms and Conditions</label>
           </div>
         </div>
-        <button className="ui primary button" onClick={onFormSubmitt}>
+        <button className="ui primary button" onClick={onFormSubmit}>
           Gönder
         </button>
       </div>
